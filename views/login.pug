@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .container
+        .col-md-6
+            include error-messages/messages.pug
+            form(action="/users/login", method="POST")
+                .form-group
+                    label(for='email') Email
+                    input.form-control#email(type='email' aria-describedby='emailHelp' placeholder="email" name="email" required)
+                    small#emailHelp.form-text.text-muted Renseigner votre email.
+                .form-group
+                    label(for='password') Password
+                    input.form-control#password(type='password' name="password" placeholder="password" required)
+                h5
+                    a(href="/users/register")
+                        small#emailHelp.form-text.text-muted Register
+                button.btn.btn-primary.mt-2(type='submit') Connexion

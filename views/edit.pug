@@ -1,0 +1,120 @@
+extends layout
+
+
+block content
+    .col-md-6.m-auto
+            .card-header.border
+            p.text-center AJOUTER NOUVEL APPAREIL
+            .card
+                .card-body
+                    form(method="POST", action="/editer/" + appareil.id + "?_method=PUT")
+                        .form-group
+                            label(for='exampleFormControlInput1') Name
+                            input.form-control#exampleFormControlInput1(type='text' placeholder='appareil name'
+                            value=appareil.name
+                            name='name')
+                        .form-group
+                            label(for='exampleFormControlSelect1') Status appareil
+                            select.form-control#exampleFormControlSelect1(value=appareil.status
+                            name='status')
+                                if appareil.id === appareil.id
+                                    if appareil.status === "Allumer"
+                                        option
+                                            =appareil.status
+                                        option Eteint
+                                    else if appareil.status === "Eteint"
+                                        option
+                                            =appareil.status
+                                        option Allumer
+                                else
+                                    option Allumer
+                                    option Eteint
+                        .form-group 
+                            label(for='exampleFormControlSelect1') Types
+                            select.form-control#exampleFormControlSelect1(value=appareil.type
+                            name='type')
+                                if appareil.id === appareil.id
+                                    each type in appareil.types
+                                        if type.type === "Electromenager"
+                                            option
+                                                =type.type
+                                            option Electrique
+                                            option Electronique
+                                        else if type.type === "Electrique"
+                                            option
+                                                =type.type
+                                            option Electromenager
+                                            option Electronique
+                                        else if type.type === "Electronique"
+                                            option
+                                                =type.type
+                                            option Electromenager
+                                            option Electrique
+                                        else
+                                            option Electromenager
+                                            option Electrique
+                                            option Electronique
+                        .form-group
+                            label(for='exampleFormControlInput3') Color
+                            input.form-control#exampleFormControlInput1(type='text' placeholder='appareil color'
+                            value=appareil.color
+                            name='color')
+                        .form-group   
+                            label(for='customRange1') Puissance(Kw)
+                        .form-group
+                            .states
+                                div
+                                    | 0
+                                div
+                                    | 10
+                                div
+                                    | 20
+                                div
+                                    | 30
+                                div
+                                    | 40
+                                div
+                                    | 50
+                                div
+                                    | 60
+                                div
+                                    | 70
+                                div
+                                    | 80
+                                div
+                                    | 90
+                                div
+                                    | 100
+                            input.custom-range#customRange3(type='range' min='0' max='1000' step='1' name='puissance' value=appareil.puissance)
+                        .form-group   
+                            label(for='customRange2') Prix (Euro)
+                        .form-group
+                            .states
+                                div
+                                    | 0
+                                div
+                                    | 100
+                                div
+                                    | 200
+                                div
+                                    | 300
+                                div
+                                    | 400
+                                div
+                                    | 500
+                                div
+                                    | 600
+                                div
+                                    | 700
+                                div
+                                    | 800
+                                div
+                                    | 900
+                                div
+                                    | 1000
+                            input.custom-range#customRange2(type='range' min='0' max='1000' step='1' name='prix' value=appareil.prix)
+                        .form-group
+                            label(for='exampleFormControlTextarea4') Description
+                            textarea.form-control#exampleFormControlTextarea4(rows='3' name='description')
+                                = appareil.description
+                        input.btn.btn-secondary(type='submit' value='Editer')

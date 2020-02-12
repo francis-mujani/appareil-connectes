@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .container
+        if appareil.status === "Allumer"
+            .card.text-center
+                .card-header.statusBgColorA
+                h2= appareil.name
+                .card-body
+                    h5.card-title= appareil.description
+                    p.card-text Couleur: 
+                        = appareil.color
+                    a.btn.btn-primary(href='/') Voir les autres appareils
+                .card-footer.text-muted Prix:   
+                    = appareil.prix     
+                    |   Euro
+        
+        else if appareil.status === "Eteint"
+            .card.text-center
+                .card-header.statusBgColorE
+                h2= appareil.name
+                .card-body
+                    h5.card-title= appareil.description
+                    p.card-text Couleur: 
+                        = appareil.color
+                    a.btn.btn-primary(href='/') Voir les autres appareils
+                .card-footer.text-muted Prix:   
+                    = appareil.prix     
+                    |   Euro

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    .container
+        .col-md-6
+            include error-messages/messages.pug
+                form(action="/users/register", method="POST")
+                    .form-group
+                        label(for='name') Nom d'utilisateur
+                        input.form-control#name(type='text' name="name" placeholder="Username" required)
+                    .form-group
+                        label(for='email') Mail
+                        input.form-control#email(type='email' name="email" placeholder="Email" required)
+                    .form-group
+                        label(for='genre') Genre
+                        select.form-control#genre.col-2(for='inputGenre'  Placeholder="genre" name='genre')
+                            option F
+                            option M
+                    .form-group
+                        label(for='password') Mot de passe
+                        input.form-control#password(type='password' name="password" placeholder="Password" required)
+                    .form-group
+                        label(for='password2') Confirmer votre mot de passe
+                        input.form-control#password2(type='password' name="password2" placeholder="Confirm password" required)
+                    button.btn.btn-primary(type='submit') Sign In

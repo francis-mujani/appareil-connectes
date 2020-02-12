@@ -1,0 +1,49 @@
+if (!user)
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-4.fixed-top
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarText.navBarre
+      div
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/')
+              | views appareils 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='/ajouter') Add new appareil
+          li.nav-item
+            a.nav-link(href='/about') About me
+          span.navbar-text.
+    div.navBarre2
+      div.navbar-text
+        a.nav-link(href='/users/login') Sigh up
+      div.navbar-text
+        a.nav-link(href='/users/register') Sigh In
+        span.navbar-text
+if (user)
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-4.fixed-top
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarText.navBarre
+      div
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Voir appareils
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='/ajouter') Add new appareil
+          li.nav-item
+            a.nav-link(href='/about') About me
+          span.navbar-text.
+      div
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/') WELCOME 
+              = user.name.toUpperCase()
+              span.sr-only (current)
+    div
+      ul.navbar-nav.mr-auto
+        li.nav-item
+          a.nav-link(href='/users/logout')
+            i.fa.fa-power-off(aria-hidden="true" style='font-size: 25px;')
+              span.sr-only (current)

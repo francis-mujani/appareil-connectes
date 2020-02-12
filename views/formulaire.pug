@@ -1,0 +1,92 @@
+extends layout
+
+
+block content
+    .col-md-6.m-auto
+        .card-header.border
+        p.text-center AJOUTER NOUVEL APPAREIL
+        .card
+            .card-body
+                form(action="/ajouter", method="POST")
+                    .form-group
+                        label(for='exampleFormControlInput1') Name
+                        input.form-control#exampleFormControlInput1(type='text'
+                         placeholder='appareil name'
+                        name='name' required)
+                    .form-group
+                        label(for='exampleFormControlSelect1') Status appareil
+                        select.form-control#exampleFormControlSelect1(
+                        name='status')
+                            option Allumer
+                            option Eteint
+                    .form-group 
+                        label(for='exampleFormControlSelect2') Types
+                        select.form-control#exampleFormControlSelect2(
+                        name='type')
+                            option Electromenager
+                            option Electrique
+                            option Electronique
+                    .form-group
+                        label(for='exampleFormControlInput3') Color
+                        input.form-control#exampleFormControlInput1(type='text' placeholder='appareil color'
+                        name='color' required)
+                    .form-group   
+                        label(for='customRange1') Puissance(Kw)
+                    .form-group
+                        .states
+                            div
+                                | 0
+                            div
+                                | 10
+                            div
+                                | 20
+                            div
+                                | 30
+                            div
+                                | 40
+                            div
+                                | 50
+                            div
+                                | 60
+                            div
+                                | 70
+                            div
+                                | 80
+                            div
+                                | 90
+                            div
+                                | 100
+                        input.custom-range#customRange3(type='range' min='0' max='1000' step='1' name='puissance')
+                    .form-group   
+                        label(for='customRange2') Prix (Euro)
+                    .form-group
+                        .states
+                            div
+                                | 0
+                            div
+                                | 100
+                            div
+                                | 200
+                            div
+                                | 300
+                            div
+                                | 400
+                            div
+                                | 500
+                            div
+                                | 600
+                            div
+                                | 700
+                            div
+                                | 800
+                            div
+                                | 900
+                            div
+                                | 1000
+                        input.custom-range#customRange2(type='range' min='0' max='1000' step='1' name='prix' required)
+                    .form-group
+                        label(for='exampleFormControlTextarea4') Description
+                        textarea.form-control#exampleFormControlTextarea4(rows='3' name='description' required)
+                    input.btn.btn-secondary(type='submit' value='Ajouter')
+
+    

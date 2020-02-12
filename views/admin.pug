@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    .container
+        each appareil in appareils
+            if appareil.status === "Allumer"
+                .col-md-8.list-group-item.statusBgColorA.mb-1
+                    .list-group-item
+                        .toast(role='alert' aria-live='assertive' aria-atomic='true')
+                        .toast-header
+                            if appareil.status === "Allumer"
+                                i.fas.fa-lightbulb.mr-1.statusColorA(style='font-size: 22px;')
+                                strong.mr-auto= appareil.name
+                                a(href=appareil.id)
+                                    i.fas.fa-info-circle(style='font-size: 20px;')
+                                button.ml-2.mb-1.close(type='button' data-dismiss='toast' aria-label='Close')
+                                span(aria-hidden='true')
+                        .toast-body
+                            if appareil.status === "Allumer"
+                                .alert.alert-success(role='alert').
+                            p Type: 
+                                each type in appareil.types 
+                                    = type.type
+                        .states
+                            div
+                                a(href="#").badge.badge-success.ml-2 Allumer
+                                a(href="#").badge.badge-danger.ml-2 Eteindre
+                            div
+                                .flex1
+                                    a(href="/editer/" + appareil.id)
+                                        i.fas.fa-pencil-alt.mr-3(style='font-size: 20px;')
+                                    form(method="POST", action="/supprimer/" + appareil.id + "?_method=DELETE")
+                                        button(type="submit").btn.btn-danger.btn.sm.mr-2
+                                            i.far.fa-trash-alt
+
+            else if appareil.status === "Eteint"
+                .col-md-8.list-group-item.statusBgColorE.mb-1
+                    .list-group-item
+                        .toast(role='alert' aria-live='assertive' aria-atomic='true')
+                        .toast-header
+                            if appareil.status === "Eteint"
+                                i.fas.fa-lightbulb.mr-1.statusColorE(style='font-size: 22px;')
+                                strong.mr-auto= appareil.name
+                                a(href=appareil.id)
+                                    i.fas.fa-info-circle(style='font-size: 20px;')
+                                button.ml-2.mb-1.close(type='button' data-dismiss='toast' aria-label='Close')
+                                span(aria-hidden='true')
+                        .toast-body
+                            if appareil.status === "Eteint"
+                                .alert.alert-danger(role='alert').
+                            p Type: 
+                                each type in appareil.types 
+                                    = type.type
+                        .states
+                            div
+                                a(href="#").badge.badge-success.ml-2 Allumer
+                                a(href="#").badge.badge-danger.ml-2 Eteindre
+                            div
+                                .flex1
+                                    a(href="/editer/" + appareil.id)
+                                        i.fas.fa-pencil-alt.mr-3(style='font-size: 20px;')
+                                    form(method="POST", action="/supprimer/" + appareil.id + "?_method=DELETE")
+                                        button(type="submit").btn.btn-danger.btn.sm.mr-2
+                                            i.far.fa-trash-alt

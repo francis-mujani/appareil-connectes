@@ -1,0 +1,35 @@
+{
+  "name": "appareils-connectes",
+  "version": "1.0.0",
+  "description": "My first app ",
+  "main": "server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "html2pug": "html2pug < html2pug.html > html2pug.pug -f"
+  },
+  "author": "francis mujani",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.8",
+    "bcryptjs": "^2.4.3",
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.0",
+    "html2pug": "^4.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.8.11",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "pug": "^2.0.4"
+  }
+}

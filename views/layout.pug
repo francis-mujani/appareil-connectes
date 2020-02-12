@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="fr")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+        <!--Style Bootstrap-->
+        <link href="/css/Bootstrap.min.css" rel="stylesheet">
+        <!--Style perso-->
+        <link rel="stylesheet"  href="/css/styles.css" >
+        <!--font awesome-->
+        link(rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css')
+
+        title Appareils connectés
+    body
+        include nav
+        #main
+            block content
+        include footer

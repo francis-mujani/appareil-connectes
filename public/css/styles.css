@@ -1,0 +1,48 @@
+body{
+	margin: 0;
+    background-color: rgba(237, 237, 248, 0.856);
+}
+
+#main{
+	margin-top: 120px;
+	min-height: calc(100vh - 150px);
+}
+
+.footer{
+	color: white;
+}
+
+/* couleur status appareils*/
+
+.statusBgColorA{
+	background: #a7eb7ab7;
+}
+.statusBgColorE{
+	background: #e4736b;
+}
+.statusColorA{
+	color: rgba(110, 180, 110, 0.678);
+}
+.statusColorE{
+	color: rgba(182, 94, 94, 0.678);
+}
+
+.states{
+	display: flex; 
+    justify-content: space-between;
+}
+
+/* boutton supprimer et editer */
+.flex1{
+	display: flex;
+}
+
+/* classe nav */
+.navBarre{
+	justify-content: space-between;
+}
+
+.navBarre2{
+	display: flex;
+	justify-content: space-between;
+}
