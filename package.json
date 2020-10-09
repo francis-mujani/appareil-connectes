@@ -12,7 +12,7 @@
   "author": "francis mujani",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parse": "^0.1.0",
     "body-parser": "^1.19.0",
